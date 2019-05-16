@@ -1,0 +1,75 @@
+program                     : declarations
+
+declarations                : (import_library | function_declaration | var_declaration_list)*
+
+import_library              : IMPORT APOSTROPHE ID APOSTROPHE SEMICOLON
+
+function_declaration        : FUNC DOT function_name DOT function_params DOT function_returns DOT body
+
+function_name               : NAME LPAREN ID RPAREN
+
+function_params             : PARAMS LPAREN parameters RPAREN
+
+function_returns            : RETURNS LPAREN type_spec RPAREN
+
+body                        : BODY LPAREN statement_list RPAREN
+
+var_declaration_list        : type_spec var var_initialization (COMMA var var_initialization)* SEMICOLON
+
+var_initialization          : (ASSIGN expr)?
+
+parameters                  : empty
+					              		| param (COMMA param)*
+
+param                       : type_spec variable
+
+statement_list              : var_declaration_list
+                            | statement
+                            | statement statement_list
+
+statement                   : assignment_statement
+                            | function_call SEMICOLON
+                            | if_statement
+                            | return_statement
+                            | empty
+
+assignment_statement        : variable ASSIGN expr SEMICOLON
+
+return_statement            : RETURN expr SEMICOLON
+
+if_statement                : IF DOT condition DOT then (DOT else)?
+
+condition                   : DOT COND LPAREN expr RPAREN
+
+then                        : THEN LPAREN statement_list RPAREN
+
+else                        : ELSE LPAREN statement_list RPAREN
+
+type_spec                   : TYPE
+
+variable                    : ID
+
+expr                        : term ((PLUS | MINUS) term)*
+
+term                        : factor ((MUL | DIV) factor)*
+
+factor                      : PLUS factor
+                            | MINUS factor
+                            | AMPERSAND variable
+                            | PLUS PLUS variable
+                            | MINUS MINUS variable
+                            | INT_NUMBER
+                            | FLOAT_NUMBER
+                            | BOOL
+                            | STRING
+                            | LPAREN expr RPAREN
+                            | variable
+                            | function_call
+
+function_call               : ID DOT CALL LPAREN (expr | STRING)* RPAREN
+
+loop                        : LOOP DOT loop_init DOT condition DOT loop_step DOT body  
+
+loop_init                   : INIT LPAREN var_declaration_list RPAREN
+
+loop_step                   : STEP LPAREN statement_list RPAREN

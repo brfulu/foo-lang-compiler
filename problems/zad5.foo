@@ -1,0 +1,13 @@
+import 'io';
+import 'math';
+
+int n = io.in();
+
+loop
+  .init(int i = 0)
+  .cond(i < n)
+  .step(++i)
+  .body(
+    int x = math.random.call(1, 100);
+    io.out(x);
+  )

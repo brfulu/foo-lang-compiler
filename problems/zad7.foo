@@ -1,0 +1,27 @@
+import 'io';
+import 'string';
+
+str text = io.in();
+str result = '';
+
+loop
+  .init(int i = 0)
+  .cond(i < text.len - 1)
+  .step(++i)
+  .body(
+    result = result + text[i];
+
+    if
+      .cond(string.isalpha(text[i]) and string.isdigit(text[i+1]))
+      .then(
+        result = result + '#';
+      )
+      
+    if
+      .cond(string.isdigit(text[i]) and string.isalpha(text[i+1]))
+      .then(
+        result = result + '*';
+      )
+  );
+
+io.out(result);

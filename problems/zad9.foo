@@ -1,0 +1,31 @@
+import 'io';
+import 'string';
+
+int n = io.in();
+str text = io.in();
+str token = '';
+str result = '';
+
+loop
+  .init(int i = 0)
+  .cond(i < text.len)
+  .step(++i)
+  .body(
+    if
+      .cond(string.isalpha(text[i]))
+      .then(
+        token = token + text[i];
+      )
+      .else(
+        if
+          .cond(token.len > n)
+          .then(
+            token = string.upper(token);
+          )
+        
+        result = result + token;
+        token = '';
+        result += text[i];
+      )
+  )
+

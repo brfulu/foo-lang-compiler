@@ -1,0 +1,19 @@
+import 'math';
+
+func
+  .name(sqrt)
+  .params(int a, int b)
+  .returns(int)
+  .body(
+    a = 2 * b + c;
+    c = 2 / 1 + 4;
+    return c;
+  )
+
+for
+  .init(int i = 0)
+  .cond(i < 10)
+  .step(i++)
+  .body(
+    print.call(sqrt.call(i));
+  )

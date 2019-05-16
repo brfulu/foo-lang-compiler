@@ -1,0 +1,39 @@
+import 'io';
+
+str file = io.in();
+str text = io.fin(file);
+
+int n = io.in();
+
+loop
+  .init(int k = 0)
+  .cond(k < n)
+  .step(++k)
+  .body(
+    str key = io.in();
+    token = '';
+    counter = 0;
+
+    loop
+      .init(int i = 0)
+      .cond(i < text.len)
+      .step(++i)
+      .body(
+        if
+          .cond(string.isalpha(text[i]))
+          .then(    
+            token = token + text[i];
+          )
+          .else(
+            if
+              .cond(token == key)
+              .then(
+                ++counter;
+              )
+            
+            token = '';
+          )
+      )
+
+    io.out(key, counter);
+  )

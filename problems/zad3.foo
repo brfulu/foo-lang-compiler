@@ -1,0 +1,10 @@
+import 'io';
+import 'math';
+
+int a = io.in();
+int b = io.in();
+int c = io.in();
+int d = io.in();
+
+int max_num = math.max.call(a, b, c, d);
+io.out('Maximum number is:', max_num);

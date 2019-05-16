@@ -1,0 +1,28 @@
+import 'io';
+import 'math';
+
+
+list result;
+
+int x = io.in();
+loop
+  .init()
+  .cond(x >= 0)
+  .step()
+  .body(
+    int temp = math.sqrt.call(x);
+    if
+      .cond(temp * temp = x)
+      .then(
+        result.add.call(x);
+      )
+    x = io.in();
+  )
+
+loop
+  .init(int i = 0)
+  .cond(i < result.len)
+  .step(++i)
+  .body(
+    io.out(result[i]);
+  )

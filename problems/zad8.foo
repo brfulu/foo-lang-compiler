@@ -1,0 +1,35 @@
+import 'io';
+
+str text = io.in();
+str result = '';
+
+if
+  .cond(text.len % 2 == 1)
+  .then(
+    int mid = text.len / 2;
+    result = result + text[mid];
+    loop
+      .init(int i = 0)
+      .cond(i < mid)
+      .step(++i)
+      .body(
+        result = text[mid - i] + result;
+        result = result + text[mid + i];
+      )
+  )
+  .else(
+    int rmid = text.len / 2;
+    int lmid = rmid - 1;
+    result = text[lmid] + text[rmid];
+    loop
+      .init(int i = 0)
+      .cond(i < text.len / 2 - 1)
+      .step(++i)
+      .body(
+        result = text[lmid - i] + result;
+        result = result + text[rmid + i];
+      )
+  );
+
+
+io.out(result);
