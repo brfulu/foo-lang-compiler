@@ -1,75 +1,120 @@
-program                     : declarations
+<program>                   : <declarations>
 
-declarations                : (import_library | function_declaration | var_declaration_list)*
+<declarations>              : (<import_library> | <function_declaration> | <var_declaration)*
 
-import_library              : IMPORT APOSTROPHE ID APOSTROPHE SEMICOLON
+<import_library>            : import <apostrophe> <id> <apostrophe> <semicolon>
 
-function_declaration        : FUNC DOT function_name DOT function_params DOT function_returns DOT body
+<function_declaration>      : func <dot> <function_name> <dot> <function_params> <dot> <function_returns> <dot> <body>
 
-function_name               : NAME LPAREN ID RPAREN
+<function_name>             : name <lparen> <id> <rparen>
 
-function_params             : PARAMS LPAREN parameters RPAREN
+<function_params>           : params <lparen> <parameters> <rparen>
 
-function_returns            : RETURNS LPAREN type_spec RPAREN
+<function_returns>          : returns <lparen> <type> <rparen>
 
-body                        : BODY LPAREN statement_list RPAREN
+<body>                      : body <lparen> <statement_list> <rparen>
 
-var_declaration_list        : type_spec var var_initialization (COMMA var var_initialization)* SEMICOLON
+<var_declaration>           : <type> <variable> <var_initialization> <semicolon>
 
-var_initialization          : (ASSIGN expr)?
+<var_initialization>        : (<assign> <expr>)?
 
-parameters                  : empty
-					              		| param (COMMA param)*
+<parameters>                : <empty>
+                            | <param> (<comma> <param>)*
 
-param                       : type_spec variable
+<param>                     : <type> <variable>
 
-statement_list              : var_declaration_list
-                            | statement
-                            | statement statement_list
+<statement_list>            : <statement> <statement_list>
+                            | <empty>
 
-statement                   : assignment_statement
-                            | function_call SEMICOLON
-                            | if_statement
-                            | return_statement
-                            | empty
+<statement>                 : <var_declaration>
+                            | <assignment_statement>
+                            | <function_call>
+                            | <if_statement>
+                            | <return_statement>
 
-assignment_statement        : variable ASSIGN expr SEMICOLON
+<assignment_statement>      : <variable> <assign> <expr> <semicolon>
 
-return_statement            : RETURN expr SEMICOLON
+<variable>                  : <id>
 
-if_statement                : IF DOT condition DOT then (DOT else)?
+<return_statement>          : return <expr> <SEMICOLON>
 
-condition                   : DOT COND LPAREN expr RPAREN
+<if_statement>              : if <dot> <condition> <dot> then (<dot> <else>)?
 
-then                        : THEN LPAREN statement_list RPAREN
+<condition>                 : cond <lparen> <expr> <rparen>
 
-else                        : ELSE LPAREN statement_list RPAREN
+<then>                      : then <lparen> <statement_list> <rparen>
 
-type_spec                   : TYPE
+<else>                      : else <lparen> <statement_list> <rparen>
 
-variable                    : ID
+<expr>                      : <term> ((<plus> | <minus>) <term>)*
 
-expr                        : term ((PLUS | MINUS) term)*
+<term>                      : <factor> ((<mul> | <div>) <factor>)*
 
-term                        : factor ((MUL | DIV) factor)*
+<factor>                    : <plus> <factor>
+                            | <minus> <factor>
+                            | <ampersand> <variable>
+                            | <plus> <plus> <variable>
+                            | <minus minus> <variable>
+                            | <number>
+                            | <boolean>
+                            | <string>
+                            | <lparen> <expr> <rparen<
+                            | <variable>
+                            | <function_call>
 
-factor                      : PLUS factor
-                            | MINUS factor
-                            | AMPERSAND variable
-                            | PLUS PLUS variable
-                            | MINUS MINUS variable
-                            | INT_NUMBER
-                            | FLOAT_NUMBER
-                            | BOOL
-                            | STRING
-                            | LPAREN expr RPAREN
-                            | variable
-                            | function_call
+<function_call>             : <id> <dot> call <lparen> <arguments>(<expr>)* <rparen> <semicolon>
 
-function_call               : ID DOT CALL LPAREN (expr | STRING)* RPAREN
+<arguments>                 : <empty>
+                            | <expr> (<comma> <expr>)*
 
-loop                        : LOOP DOT loop_init DOT condition DOT loop_step DOT body  
+<loop>                      : loop <dot> <loop_init> <dot> <condition> <dot> <loop_step> <dot> <body>
 
-loop_init                   : INIT LPAREN var_declaration_list RPAREN
+<loop_init>                 : init <lparen> <var_declaration> <rparen>
 
-loop_step                   : STEP LPAREN statement_list RPAREN
+<loop_step>                 : step <lparen> <statement_list> <rparen>
+
+<apostrophe>                : '
+
+<semicolon>                 : ;
+
+<dot>                       : .
+
+<assign>                    : :=
+
+<coma>                      : ,
+
+<type>                      : num
+                            | str
+                            | bool
+                            | list
+
+<plus>                      : +
+
+<minus>                     : -
+
+<mul>                       : *
+
+<div>                       : /
+
+<number>                    : <int_number>
+                            | <float_number>
+
+<int_number>                : <sign> <digit> (<digit>)*
+
+<digit>                     : 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+
+<float_number>              : <int_number> (<dot> <digit> (<digit>)*)?
+
+<sign>                      : empty
+                            | <plus>
+                            | <minus>
+
+<string>                    : <apostrophe> (<char>)* <apostrophe>
+
+<char>                      : a | b | c | ... | z | A | B | C | ... | Z | . | , | ! | ? | : | ...
+
+<boolean>                   : true
+                            | false
+
+<empty>                     :
+

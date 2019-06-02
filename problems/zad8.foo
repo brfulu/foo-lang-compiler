@@ -2,6 +2,7 @@ import 'io';
 
 str text = io.in();
 str result = '';
+str a = 'asdsadsa';
 
 if
   .cond(text.len % 2 == 1)
