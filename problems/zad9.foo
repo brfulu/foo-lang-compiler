@@ -1,31 +1,32 @@
 import 'io';
 import 'string';
 
-int n = io.in();
-str text = io.in();
+int n = io.in.call();
+str text = io.in.call();
 str token = '';
 str result = '';
 
 loop
-  .init(int i = 0)
-  .cond(i < text.len)
-  .step(++i)
+  .init(
+    int i = 0;
+  )
+  .cond(i < text.len.call())
   .body(
+    ++i;
     if
-      .cond(string.isalpha(text[i]))
+      .cond(string.isalpha.call(text[i]))
       .then(
-        token = token + text[i];
+        token += text[i];
       )
       .else(
         if
-          .cond(token.len > n)
+          .cond(token.len.call() > n)
           .then(
-            token = string.upper(token);
+            token = string.upper.call(token);
           )
         
         result = result + token;
         token = '';
-        result += text[i];
       )
   )
 

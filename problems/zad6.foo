@@ -3,26 +3,27 @@ import 'math';
 
 
 list result;
+int x = io.in.call();
 
-int x = io.in();
 loop
   .init()
   .cond(x >= 0)
-  .step()
   .body(
     int temp = math.sqrt.call(x);
     if
       .cond(temp * temp = x)
       .then(
-        result.add.call(x);
+        result += x;
       )
-    x = io.in();
+    x = io.in.call();
   )
 
 loop
-  .init(int i = 0)
-  .cond(i < result.len)
-  .step(++i)
+  .init(
+    int i = 0;
+  )
+  .cond(i < result.len.call())
   .body(
-    io.out(result[i]);
+    io.out.call(result[i]);
+    ++i;
   )

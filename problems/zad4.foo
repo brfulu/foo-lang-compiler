@@ -1,16 +1,18 @@
 import 'io';
 
-int n = io.in();
-float sum = 0;
+int n = io.in.call();
+flt sum = 0;
 
 loop
-  .init(int i = 0)
+  .init(
+    int i = 0;
+  )
   .cond(i < n)
-  .step(++i)
   .body(
-    int x = io.in();
-    sum = sum + x;
+    int x = io.in.call();
+    sum += x;
+    ++i;
   )
 
-float avg = sum / n;
-io.out('Average:', avg);
+flt avg = sum / n;
+io.out.call('Average:', avg);

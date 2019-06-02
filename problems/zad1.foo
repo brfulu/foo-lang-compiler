@@ -1,10 +1,10 @@
 import 'io';
 
-int height = io.in.call()
+int height = io.in.call();
 
-int man_weight = height - 100;
-io.out('Ideal weight for men:', man_weight)
+int men_weight = height - 100;
+io.out.call('Ideal weight for men:', men_weight)
 
 int women_weight = height - 120;
-io.out('Ideal weight for women:', women_weight)
+io.out.call('Ideal weight for women:', women_weight)
 

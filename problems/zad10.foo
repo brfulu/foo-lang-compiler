@@ -1,28 +1,33 @@
 import 'io';
 
-str file = io.in();
-str text = io.fin(file);
+str file = io.in.call();
+str text = io.fin.call(file);
 
-int n = io.in();
+int n = io.in.call();
 
 loop
-  .init(int k = 0)
+  .init(
+    int k = 0;
+  )
   .cond(k < n)
-  .step(++k)
   .body(
-    str key = io.in();
-    token = '';
-    counter = 0;
+    ++k;
+
+    str key = io.in.call();
+    str token = '';
+    int counter = 0;
 
     loop
-      .init(int i = 0)
-      .cond(i < text.len)
-      .step(++i)
+      .init(
+        int i = 0;
+      )
+      .cond(i < text.len.call())
       .body(
+        ++i;
         if
-          .cond(string.isalpha(text[i]))
-          .then(    
-            token = token + text[i];
+          .cond(string.isalpha.call(text[i]))
+          .then(
+            token += text[i];
           )
           .else(
             if
@@ -30,7 +35,6 @@ loop
               .then(
                 ++counter;
               )
-            
             token = '';
           )
       )

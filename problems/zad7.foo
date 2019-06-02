@@ -1,27 +1,30 @@
 import 'io';
 import 'string';
 
-str text = io.in();
+str text = io.in.call();
 str result = '';
 
 loop
-  .init(int i = 0)
-  .cond(i < text.len - 1)
-  .step(++i)
+  .init(
+    int i = 0;
+  )
+  .cond(i < text.len.call() - 1)
   .body(
-    result = result + text[i];
+    result += text[i];
 
     if
-      .cond(string.isalpha(text[i]) and string.isdigit(text[i+1]))
+      .cond(string.isalpha.call(text[i]) and string.isdigit.call(text[i+1]))
       .then(
-        result = result + '#';
+        result += '#';
       )
       
     if
-      .cond(string.isdigit(text[i]) and string.isalpha(text[i+1]))
+      .cond(string.isdigit.call(text[i]) and string.isalpha.call(text[i+1]))
       .then(
-        result = result + '*';
+        result += '*';
       )
+
+    ++i;
   );
 
-io.out(result);
+io.out.call(result);

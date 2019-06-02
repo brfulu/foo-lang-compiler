@@ -1,19 +1,21 @@
 import 'io';
 
-str text = io.in();
+str text = io.in.call();
 str result = '';
 str a = 'asdsadsa';
 
 if
-  .cond(text.len % 2 == 1)
+  .cond(text.len.call() % 2 == 1)
   .then(
     int mid = text.len / 2;
     result = result + text[mid];
     loop
-      .init(int i = 0)
+      .init(
+        int i = 0;
+      )
       .cond(i < mid)
-      .step(++i)
       .body(
+        ++i;
         result = text[mid - i] + result;
         result = result + text[mid + i];
       )
@@ -23,14 +25,15 @@ if
     int lmid = rmid - 1;
     result = text[lmid] + text[rmid];
     loop
-      .init(int i = 0)
-      .cond(i < text.len / 2 - 1)
-      .step(++i)
+      .init(
+        int i = 0;
+      )
+      .cond(i < text.len.call() / 2 - 1)
       .body(
+        ++i;
         result = text[lmid - i] + result;
         result = result + text[rmid + i];
       )
   );
 
-
-io.out(result);
+io.out.call(result);

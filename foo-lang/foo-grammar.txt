@@ -1,10 +1,10 @@
-<program>               : <decls>
+<program>               : <declarations>
 
-<decls>                 : (<import_library> | <func_decl> | <var_decl> | <stmt_list>)*
+<declarations>          : (<library_import> | <func_declaration> | <var_declaration> | <stmt_list>)*
 
-<import_library>        : import <apostrophe> <id> <apostrophe> <semicolon>
+<library_import>        : import <apostrophe> <id> <apostrophe> <semicolon>
 
-<func_decl>             : func <dot> <func_name> <dot> <func_params> <dot> <func_returns> <dot> <body>
+<func_declaration>      : func <dot> <func_name> <dot> <func_params> <dot> <func_returns> <dot> <body>
 
 <func_name>             : name <lparen> <id> <rparen>
 
@@ -12,9 +12,9 @@
 
 <func_returns>          : returns <lparen> <type> <rparen>
 
-<body>                  : body <lparen> <stmt_list> <rparen>
+<body>                  : body <lparen> (<stmt_list>)? <rparen>
 
-<var_decl>              : <type> <var> <var_init> <semicolon>
+<var_declaration>       : <type> <var> <var_init> <semicolon>
 
 <var_init>              : (<assign> <expr>)?
 
@@ -26,14 +26,17 @@
 <stmt_list >            : <stmt> <stmt_list>
                         | <empty>
 
-<stmt>                  : <var_decl>
+<stmt>                  : <var_declaration>
                         | <assignment_stmt>
                         | <aug_assignment_stmt>
+                        | <comparison_stmt>
                         | <list_access>
                         | <func_call>
                         | <if_stmt>
                         | <loop>
                         | <return_stmt>
+
+<comparison_stmt>       : <expr> (<lt> | <gt> | <lt_or_eq> | <gt_or_eq>) <expr>
 
 <assignment_stmt>       : <var> <assign> <expr> <semicolon>
 
@@ -64,24 +67,27 @@
                         | <ampersand> <var>
                         | <plus> <plus> <var>
                         | <minus minus> <var>
-                        | <number>
+                        | <int>
+                        | <float>
                         | <boolean>
                         | <string>
                         | <lparen> <expr> <rparen>
                         | <var>
                         | <func_call>
 
-<func_call>             : <id> <dot> call <lparen> <arguments>(<expr>)* <rparen> <semicolon>
+<func_call>             : (<variable> <dot>)? <id> <dot> call <lparen> <arguments>(<expr>)* <rparen> <semicolon>
 
 <arguments>             : <empty>
                         | <expr> (<comma> <expr>)*
 
-<loop>                  : loop <dot> <loop_init> <dot> <condition> <dot> <loop_step> <dot> <body>
+<loop>                  : loop <dot> <loop_init> <dot> <condition> <dot> <body>
 
-<loop_init>             : init <lparen> <var_decl> <rparen>
+<loop_init>             : init <lparen> (<var_declaration>)? <rparen>
 
-<loop_step>             : step <lparen> <stmt_list> <rparen>
 
+<id>                    : <letter> (<letter> | <digit> | <underscore>)*
+
+<underscore>            : _
 
 <apostrophe>            : '
 
@@ -93,7 +99,8 @@
 
 <coma>                  : ,
 
-<type>                  : num
+<type>                  : int
+                        | flt
                         | str
                         | bool
                         | list
@@ -108,16 +115,13 @@
 
 <mod>                   : %
 
-<number>                : <int_number>
-                        | <float_number>
+<int>                   : <sign> <whole_number>
 
-<int_number>            : <sign> <whole_number>
+<float>                 : <int_number> (<dot> <whole_number>)?
 
 <whole_number>          : <digit> (<digit>)*
 
 <digit>                 : 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
-
-<float_number>          : <int_number> (<dot> <whole_number>)?
 
 <sign>                  : empty
                         | <plus>
@@ -130,9 +134,17 @@
 <boolean>               : true
                         | false
 
-<l_square_bracket>          : [
+<l_square_bracket>      : [
 
-<r_square_bracket>          : ]
+<r_square_bracket>      : ]
 
-<empty>                     :
+<gt>                    : >
+
+<lt>                    : <
+
+<gt_or_eq>              : >=
+
+<lt_or_eq>              : <=
+
+<empty>                 :
 

@@ -1,29 +1,33 @@
 import 'io';
 
-int num = io.in();
+int num = io.in.call();
 int sum = 0;
 
 loop
   .init()
   .cond(num > 0)
-  .step(num = num / 10)
   .body(
     int digit = num % 10;
-    sum = sum + digit;
+    sum += digit;
+    num /= 10;
   )
+
+str result = '';
 
 if
   .cond(sum < 10)
   .then(
-    io.out('Suma cifara je manja od 10');
+    result = 'Suma cifara je manja od 10';
   )
   .else(
     if
       .cond(sum == 10)
       .then(
-        io.out('Suma cifara je 10');
+        result = 'Suma cifara je 10';
       )
       .else(
-        io.out('Suma cifara je veca od 10');
+        result = 'Suma cifara je veca od 10';
       )
   )
+
+io.out.call(result);
