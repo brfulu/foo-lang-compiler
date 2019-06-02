@@ -1,6 +1,6 @@
 <program>                   : <declarations>
 
-<declarations>              : (<import_library> | <function_declaration> | <var_declaration)*
+<declarations>              : (<import_library> | <function_declaration> | <var_declaration> | <statement_list>)*
 
 <import_library>            : import <apostrophe> <id> <apostrophe> <semicolon>
 
@@ -28,15 +28,19 @@
 
 <statement>                 : <var_declaration>
                             | <assignment_statement>
+                            | <list_access>
                             | <function_call>
                             | <if_statement>
+                            | <loop>
                             | <return_statement>
 
 <assignment_statement>      : <variable> <assign> <expr> <semicolon>
 
+<list_access>               : <variable> <l_square_bracket> <whole_number> <r_square_bracket>
+
 <variable>                  : <id>
 
-<return_statement>          : return <expr> <SEMICOLON>
+<return_statement>          : return <expr> <semicolon>
 
 <if_statement>              : if <dot> <condition> <dot> then (<dot> <else>)?
 
@@ -58,11 +62,11 @@
                             | <number>
                             | <boolean>
                             | <string>
-                            | <lparen> <expr> <rparen<
+                            | <lparen> <expr> <rparen>
                             | <variable>
                             | <function_call>
 
-<function_call>             : <id> <dot> call <lparen> <arguments>(<expr>)* <rparen> <semicolon>
+<function_call>             : (<variable> <dot>)? <id> <dot> call <lparen> <arguments>(<expr>)* <rparen> <semicolon>
 
 <arguments>                 : <empty>
                             | <expr> (<comma> <expr>)*
@@ -72,6 +76,8 @@
 <loop_init>                 : init <lparen> <var_declaration> <rparen>
 
 <loop_step>                 : step <lparen> <statement_list> <rparen>
+
+
 
 <apostrophe>                : '
 
@@ -99,11 +105,13 @@
 <number>                    : <int_number>
                             | <float_number>
 
-<int_number>                : <sign> <digit> (<digit>)*
+<int_number>                : <sign> <whole_number>
+
+<whole_number>              : <digit> (<digit>)*
 
 <digit>                     : 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 
-<float_number>              : <int_number> (<dot> <digit> (<digit>)*)?
+<float_number>              : <int_number> (<dot> <whole_number>)?
 
 <sign>                      : empty
                             | <plus>
@@ -115,6 +123,10 @@
 
 <boolean>                   : true
                             | false
+
+<l_square_bracket>          : [
+
+<r_square_bracket>          : ]
 
 <empty>                     :
 
