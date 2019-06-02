@@ -1,128 +1,134 @@
-<program>                   : <declarations>
+<program>               : <decls>
 
-<declarations>              : (<import_library> | <function_declaration> | <var_declaration> | <statement_list>)*
+<decls>                 : (<import_library> | <func_decl> | <var_decl> | <stmt_list>)*
 
-<import_library>            : import <apostrophe> <id> <apostrophe> <semicolon>
+<import_library>        : import <apostrophe> <id> <apostrophe> <semicolon>
 
-<function_declaration>      : func <dot> <function_name> <dot> <function_params> <dot> <function_returns> <dot> <body>
+<func_decl>             : func <dot> <func_name> <dot> <func_params> <dot> <func_returns> <dot> <body>
 
-<function_name>             : name <lparen> <id> <rparen>
+<func_name>             : name <lparen> <id> <rparen>
 
-<function_params>           : params <lparen> <parameters> <rparen>
+<func_params>           : params <lparen> <parameters> <rparen>
 
-<function_returns>          : returns <lparen> <type> <rparen>
+<func_returns>          : returns <lparen> <type> <rparen>
 
-<body>                      : body <lparen> <statement_list> <rparen>
+<body>                  : body <lparen> <stmt_list> <rparen>
 
-<var_declaration>           : <type> <variable> <var_initialization> <semicolon>
+<var_decl>              : <type> <var> <var_init> <semicolon>
 
-<var_initialization>        : (<assign> <expr>)?
+<var_init>              : (<assign> <expr>)?
 
-<parameters>                : <empty>
-                            | <param> (<comma> <param>)*
+<parameters>            : <empty>
+                        | <param> (<comma> <param>)*
 
-<param>                     : <type> <variable>
+<param>                 : <type> <var>
 
-<statement_list>            : <statement> <statement_list>
-                            | <empty>
+<stmt_list >            : <stmt> <stmt_list>
+                        | <empty>
 
-<statement>                 : <var_declaration>
-                            | <assignment_statement>
-                            | <list_access>
-                            | <function_call>
-                            | <if_statement>
-                            | <loop>
-                            | <return_statement>
+<stmt>                  : <var_decl>
+                        | <assignment_stmt>
+                        | <aug_assignment_stmt>
+                        | <list_access>
+                        | <func_call>
+                        | <if_stmt>
+                        | <loop>
+                        | <return_stmt>
 
-<assignment_statement>      : <variable> <assign> <expr> <semicolon>
+<assignment_stmt>       : <var> <assign> <expr> <semicolon>
 
-<list_access>               : <variable> <l_square_bracket> <whole_number> <r_square_bracket>
+<aug_assignment_stmt>   : <var> <aug_op> <expr> <semicolon>
 
-<variable>                  : <id>
+<aug_op>                : (<plus> | <minus> | <mul> | <div> | <mod>) <assign>
 
-<return_statement>          : return <expr> <semicolon>
+<list_access>           : <var> <l_square_bracket> <whole_number> <r_square_bracket>
 
-<if_statement>              : if <dot> <condition> <dot> then (<dot> <else>)?
+<var>                   : <id>
 
-<condition>                 : cond <lparen> <expr> <rparen>
+<return_stmt>           : return <expr> <semicolon>
 
-<then>                      : then <lparen> <statement_list> <rparen>
+<if_stmt>               : if <dot> <condition> <dot> then (<dot> <else>)?
 
-<else>                      : else <lparen> <statement_list> <rparen>
+<condition>             : cond <lparen> <expr> <rparen>
 
-<expr>                      : <term> ((<plus> | <minus>) <term>)*
+<then>                  : then <lparen> <stmt_list> <rparen>
 
-<term>                      : <factor> ((<mul> | <div>) <factor>)*
+<else>                  : else <lparen> <stmt_list> <rparen>
 
-<factor>                    : <plus> <factor>
-                            | <minus> <factor>
-                            | <ampersand> <variable>
-                            | <plus> <plus> <variable>
-                            | <minus minus> <variable>
-                            | <number>
-                            | <boolean>
-                            | <string>
-                            | <lparen> <expr> <rparen>
-                            | <variable>
-                            | <function_call>
+<expr>                  : <term> ((<plus> | <minus>) <term>)*
 
-<function_call>             : (<variable> <dot>)? <id> <dot> call <lparen> <arguments>(<expr>)* <rparen> <semicolon>
+<term>                  : <factor> ((<mul> | <div>) <factor>)*
 
-<arguments>                 : <empty>
-                            | <expr> (<comma> <expr>)*
+<factor>                : <plus> <factor>
+                        | <minus> <factor>
+                        | <ampersand> <var>
+                        | <plus> <plus> <var>
+                        | <minus minus> <var>
+                        | <number>
+                        | <boolean>
+                        | <string>
+                        | <lparen> <expr> <rparen>
+                        | <var>
+                        | <func_call>
 
-<loop>                      : loop <dot> <loop_init> <dot> <condition> <dot> <loop_step> <dot> <body>
+<func_call>             : <id> <dot> call <lparen> <arguments>(<expr>)* <rparen> <semicolon>
 
-<loop_init>                 : init <lparen> <var_declaration> <rparen>
+<arguments>             : <empty>
+                        | <expr> (<comma> <expr>)*
 
-<loop_step>                 : step <lparen> <statement_list> <rparen>
+<loop>                  : loop <dot> <loop_init> <dot> <condition> <dot> <loop_step> <dot> <body>
+
+<loop_init>             : init <lparen> <var_decl> <rparen>
+
+<loop_step>             : step <lparen> <stmt_list> <rparen>
 
 
+<apostrophe>            : '
 
-<apostrophe>                : '
+<semicolon>             : ;
 
-<semicolon>                 : ;
+<dot>                   : .
 
-<dot>                       : .
+<assign>                : :=
 
-<assign>                    : :=
+<coma>                  : ,
 
-<coma>                      : ,
+<type>                  : num
+                        | str
+                        | bool
+                        | list
 
-<type>                      : num
-                            | str
-                            | bool
-                            | list
+<plus>                  : +
 
-<plus>                      : +
+<minus>                 : -
 
-<minus>                     : -
+<mul>                   : *
 
-<mul>                       : *
+<div>                   : /
 
-<div>                       : /
+<mod>                   : %
 
-<number>                    : <int_number>
-                            | <float_number>
+<number>                : <int_number>
+                        | <float_number>
 
-<int_number>                : <sign> <whole_number>
+<int_number>            : <sign> <whole_number>
 
-<whole_number>              : <digit> (<digit>)*
+<whole_number>          : <digit> (<digit>)*
 
-<digit>                     : 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+<digit>                 : 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 
-<float_number>              : <int_number> (<dot> <whole_number>)?
+<float_number>          : <int_number> (<dot> <whole_number>)?
 
-<sign>                      : empty
-                            | <plus>
-                            | <minus>
+<sign>                  : empty
+                        | <plus>
+                        | <minus>
 
-<string>                    : <apostrophe> (<char>)* <apostrophe>
+<string>                : <apostrophe> (<char>)* <apostrophe>
 
-<char>                      : a | b | c | ... | z | A | B | C | ... | Z | . | , | ! | ? | : | ...
+<char>                  : a | b | c | ... | z | A | B | C | ... | Z | . | , | ! | ? | : | ...
 
-<boolean>                   : true
-                            | false
+<boolean>               : true
+                        | false
 
 <l_square_bracket>          : [
 
