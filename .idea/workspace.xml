@@ -4,16 +4,8 @@
     <list default="true" id="95e4c347-12ff-49e6-ab82-a3bdff9013c8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/foo-lang/foo-grammar.txt" beforeDir="false" afterPath="$PROJECT_DIR$/foo-lang/foo-grammar.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problems/zad1.foo" beforeDir="false" afterPath="$PROJECT_DIR$/problems/zad1.foo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problems/zad10.foo" beforeDir="false" afterPath="$PROJECT_DIR$/problems/zad10.foo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problems/zad2.foo" beforeDir="false" afterPath="$PROJECT_DIR$/problems/zad2.foo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problems/zad3.foo" beforeDir="false" afterPath="$PROJECT_DIR$/problems/zad3.foo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problems/zad4.foo" beforeDir="false" afterPath="$PROJECT_DIR$/problems/zad4.foo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problems/zad5.foo" beforeDir="false" afterPath="$PROJECT_DIR$/problems/zad5.foo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/problems/zad6.foo" beforeDir="false" afterPath="$PROJECT_DIR$/problems/zad6.foo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problems/zad7.foo" beforeDir="false" afterPath="$PROJECT_DIR$/problems/zad7.foo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/problems/zad8.foo" beforeDir="false" afterPath="$PROJECT_DIR$/problems/zad8.foo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problems/zad9.foo" beforeDir="false" afterPath="$PROJECT_DIR$/problems/zad9.foo" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,8 +18,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/problems/zad10.foo">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="28" column="16" lean-forward="true" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+            <state relative-caret-position="560">
+              <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -36,16 +28,16 @@
         <entry file="file://$PROJECT_DIR$/foo-lang/foo-spec.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="220">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/problems/zad9.foo">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="500">
-              <caret line="25" column="11" lean-forward="true" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
+              <caret line="25" column="11" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -53,8 +45,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/foo-lang/foo-grammar.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="32" column="39" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
+            <state relative-caret-position="164">
+              <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/foo-lang/foo-lang.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="401">
+              <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+              <folding>
+                <element signature="e#930#934#0" expanded="true" />
+                <element signature="e#935#939#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -62,7 +67,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/problems/zad8.foo">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="760">
+            <state relative-caret-position="424">
               <caret line="38" column="11" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="11" />
             </state>
           </provider>
@@ -100,6 +105,7 @@
       <find>assign</find>
       <find>body</find>
       <find>result</find>
+      <find>cond</find>
     </findStrings>
     <replaceStrings>
       <replace>func_decl</replace>
@@ -122,12 +128,13 @@
         <option value="$PROJECT_DIR$/problems/zad2.foo" />
         <option value="$PROJECT_DIR$/problems/zad4.foo" />
         <option value="$PROJECT_DIR$/problems/zad5.foo" />
-        <option value="$PROJECT_DIR$/foo-lang/foo-grammar.txt" />
         <option value="$PROJECT_DIR$/problems/zad6.foo" />
         <option value="$PROJECT_DIR$/problems/zad7.foo" />
         <option value="$PROJECT_DIR$/problems/zad10.foo" />
         <option value="$PROJECT_DIR$/problems/zad8.foo" />
         <option value="$PROJECT_DIR$/problems/zad9.foo" />
+        <option value="$PROJECT_DIR$/foo-lang/foo-grammar.txt" />
+        <option value="$PROJECT_DIR$/foo-lang/foo-lang.xml" />
       </list>
     </option>
   </component>
@@ -195,18 +202,19 @@
       <option name="presentableId" value="Default" />
       <updated>1559462022506</updated>
       <workItem from="1559462025295" duration="8707000" />
-      <workItem from="1559477793621" duration="6142000" />
+      <workItem from="1559477793621" duration="6807000" />
+      <workItem from="1559542306617" duration="1670000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14849000" />
+    <option name="totallyTimeSpent" value="17184000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21744792" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21744792" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -220,7 +228,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32921812" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32921812" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -237,13 +245,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1576">
           <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/foo-lang/foo-spec.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
@@ -296,31 +297,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/foo-lang/foo-grammar.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="32" column="39" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/problems/zad10.foo">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="28" column="16" lean-forward="true" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+        <state relative-caret-position="560">
+          <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/problems/zad8.foo">
+    <entry file="file://$PROJECT_DIR$/foo-lang/foo-spec.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
-          <caret line="38" column="11" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="11" />
+        <state relative-caret-position="220">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/problems/zad9.foo">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="500">
-          <caret line="25" column="11" lean-forward="true" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
+          <caret line="25" column="11" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/problems/zad8.foo">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="38" column="11" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/foo-lang/foo-grammar.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/foo-lang/foo-lang.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+          <folding>
+            <element signature="e#930#934#0" expanded="true" />
+            <element signature="e#935#939#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

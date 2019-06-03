@@ -52,7 +52,7 @@
 
 <if_stmt>               : if <dot> <condition> <dot> then (<dot> <else>)?
 
-<condition>             : cond <lparen> <expr> <rparen>
+<condition>             : cond <lparen> <expr> ((and | or) <expr>)? <rparen>
 
 <then>                  : then <lparen> <stmt_list> <rparen>
 

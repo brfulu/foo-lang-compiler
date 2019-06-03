@@ -1,7 +1,6 @@
 import 'io';
 import 'math';
 
-
 list result;
 int x = io.in.call();
 

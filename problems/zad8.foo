@@ -21,7 +21,7 @@ if
       )
   )
   .else(
-    int rmid = text.len / 2;
+    int rmid = text.len.call() / 2;
     int lmid = rmid - 1;
     result = text[lmid] + text[rmid];
     loop
