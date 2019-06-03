@@ -23,20 +23,21 @@
 
 <param>                 : <type> <var>
 
-<stmt_list >            : <stmt> <stmt_list>
+<stmt_list>             : <stmt> <stmt_list>
                         | <empty>
 
 <stmt>                  : <var_declaration>
                         | <assignment_stmt>
                         | <aug_assignment_stmt>
                         | <comparison_stmt>
-                        | <list_access>
-                        | <func_call>
                         | <if_stmt>
                         | <loop>
+                        | <expr_stmt>
                         | <return_stmt>
 
-<comparison_stmt>       : <expr> (<lt> | <gt> | <lt_or_eq> | <gt_or_eq>) <expr>
+<expr_stmt>             : <expr> <semicolon>
+
+<comparison_stmt>       : <expr> (<lt> | <gt> | <lt_or_eq> | <gt_or_eq>) <expr> <semicolon>
 
 <assignment_stmt>       : <var> <assign> <expr> <semicolon>
 
@@ -74,6 +75,7 @@
                         | <lparen> <expr> <rparen>
                         | <var>
                         | <func_call>
+                        | <list_access>
 
 <func_call>             : (<variable> <dot>)? <id> <dot> call <lparen> <arguments>(<expr>)* <rparen> <semicolon>
 

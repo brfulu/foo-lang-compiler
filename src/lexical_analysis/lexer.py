@@ -99,6 +99,9 @@ class Lexer(object):
 				if self.current_char == '=':
 					self.advance()
 					return Token(PLUS_ASSIGN, '+=')
+				elif self.current_char == '+':
+					self.advance()
+					return Token(PLUS_PLUS, '++')
 				return Token(PLUS, '+')
 
 			if self.current_char == '-':
@@ -106,6 +109,9 @@ class Lexer(object):
 				if self.current_char == '=':
 					self.advance()
 					return Token(MINUS_ASSIGN, '-=')
+				elif self.current_char == '-':
+					self.advance()
+					return Token(MINUS_MINUS, '--')
 				return Token(MINUS, '-')
 
 			if self.current_char == '*':
