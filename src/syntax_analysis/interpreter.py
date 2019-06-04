@@ -20,6 +20,29 @@ class FunDecl(AST):
 		self.stmts_node = stmts_node
 
 
+class FunCall(AST):
+	def __init__(self, name, args_node):
+		self.name = name
+		self.args_node = args_node
+
+
+class IfStmt(AST):
+	def __init__(self, cond_node, then_node, else_node):
+		self.cond_node = cond_node
+		self.then_node = then_node
+		self.else_node = else_node
+
+
+class Loop(AST):
+	def __init__(self, init_node, cond_node, body_node):
+		self.init_node = init_node
+		self.cond_node = cond_node
+		self.body_node = body_node
+
+class Cond(AST):
+	def __init__(self, expr):
+		self.expr = expr
+
 class Type(AST):
 	def __init__(self, type):
 		self.type = type
@@ -29,6 +52,9 @@ class Var(AST):
 	def __init__(self, var):
 		self.var = var
 
+class VarInc(AST):
+	def __init__(self, var):
+		self.var = var
 
 class VarDecl(AST):
 	def __init__(self, type_node, var_node):
@@ -48,7 +74,8 @@ class Args(AST):
 
 
 class Stmts(AST):
-	def __init__(self, stmts):
+	def __init__(self, type, stmts):
+		self.type = type
 		self.stmts = stmts
 
 
@@ -63,6 +90,11 @@ class Num(AST):
 	def __init__(self, token):
 		self.token = token
 		self.value = token.value
+
+
+class String(AST):
+	def __init__(self, value):
+		self.value = value
 
 
 class NodeVisitor(object):

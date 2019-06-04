@@ -12,7 +12,7 @@ loop
     int x = io.in.call();
     sum += x;
     ++i;
-  )
+  );
 
 flt avg = sum / n;
 io.out.call('Average:', avg);

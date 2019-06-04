@@ -43,8 +43,26 @@ class Lexer(object):
 
 		if result in ['int', 'str', 'flt', 'bool', 'list']:
 			return Token(TYPE, result)
-		elif result in ['if', 'loop', 'func', 'import']:
-			return Token(KEYWORD, result)
+		elif result == 'if':
+			return Token(IF, result)
+		elif result == 'loop':
+			return Token(LOOP, result)
+		elif result == 'func':
+			return Token(FUNC, result)
+		elif result == 'import':
+			return Token(IMPORT, result)
+		elif result == 'call':
+			return Token(CALL, result)
+		elif result == 'init':
+			return Token(INIT, result)
+		elif result == 'cond':
+			return Token(COND, result)
+		elif result == 'body':
+			return Token(BODY, result)
+		elif result == 'then':
+			return Token(THEN, result)
+		elif result == 'else':
+			return Token(ELSE, result)
 		else:
 			return Token(ID, result)
 

@@ -10,7 +10,7 @@ loop
     int digit = num % 10;
     sum += digit;
     num /= 10;
-  )
+  );
 
 str result = '';
 
@@ -27,7 +27,7 @@ if
       )
       .else(
         result = 'Suma cifara je veca od 10';
-      )
-  )
+      );
+  );
 
 io.out.call(result);

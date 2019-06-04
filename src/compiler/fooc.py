@@ -1,12 +1,14 @@
 from lexical_analysis.lexer import Lexer
-from lexical_analysis.tokenType import EOF
+from syntax_analysis.parser import Parser
+from compiler.ast_visualizer import ASTVisualizer
 
 if __name__ == '__main__':
-	with open('../../test-samples/zad2.foo', 'r') as file:
+	with open('../../test-samples/zad4.foo', 'r') as file:
 		text = file.read().replace('\n', ' ')
-		lexer = Lexer(text)
 
-		token = lexer.get_next_token()
-		while token.type != EOF:
-			print(token)
-			token = lexer.get_next_token()
+		lexer = Lexer(text)
+		parser = Parser(lexer)
+		viz = ASTVisualizer(parser)
+		content = viz.genDot()
+
+		print(content)
