@@ -107,7 +107,6 @@ class Parser(object):
 		statements = []
 
 		while self.current_token.type != EOF and self.current_token.type != RPAREN:
-			# print(self.current_token)
 			if self.current_token.type == TYPE:
 				statements.extend(self.var_declaration())
 			elif self.current_token.type == IF:
@@ -120,7 +119,6 @@ class Parser(object):
 				statements.append(self.aug_assignment_stmt())
 			else:
 				statements.append(self.expr())
-				print(self.current_token)
 				self.eat(SEMICOLON)
 
 		return statements
@@ -193,7 +191,6 @@ class Parser(object):
 		return IfStmt(cond_node, then_node, else_node)
 
 	def loop(self):
-		print('evo me')
 		self.eat(LOOP)
 		self.eat(DOT)
 		self.eat(INIT)
@@ -204,16 +201,13 @@ class Parser(object):
 		self.eat(COND)
 		self.eat(LPAREN)
 		cond_node = Cond(self.expr())
-		print(cond_node)
 		self.eat(RPAREN)
 		self.eat(DOT)
-		print(self.current_token)
 		self.eat(BODY)
 		self.eat(LPAREN)
 		body_node = Stmts(BODY, self.statement_list())
 		self.eat(RPAREN)
 		self.eat(SEMICOLON)
-		print('zavrsio')
 		return Loop(init_node, cond_node, body_node)
 
 	def var_declaration(self):
@@ -262,6 +256,11 @@ class Parser(object):
 				args_node = Args(self.argument_list())
 				self.eat(RPAREN)
 				return FunCall(name, args_node)
+			elif self.current_token.type == LBRACKET:
+				self.eat(LBRACKET)
+				index = self.expr()
+				self.eat(RBRACKET)
+				return ListAccess(Var(name), index)
 			else:
 				return Var(name)
 		elif token.type == LPAREN:
@@ -288,58 +287,10 @@ class Parser(object):
 
 		return node
 
-	def bool(self):
-		result = True
-		left = self.expr()
-
-		if self.current_token.type in (LESS, GREATER, EQUAL, NOT_EQUAL, LESS_EQ, GREATER_EQ):
-			right = None
-			while self.current_token.type in (LESS, GREATER, EQUAL, NOT_EQUAL, LESS_EQ, GREATER_EQ):
-				if self.current_token.type == LESS:
-					self.eat(LESS)
-					right = self.expr()
-					if not (left < right):
-						result = False
-					left = right
-				elif self.current_token.type == GREATER:
-					self.eat(GREATER)
-					right = self.expr()
-					if not (left > right):
-						result = False
-					left = right
-				elif self.current_token.type == EQUAL:
-					self.eat(EQUAL)
-					right = self.expr()
-					if not (left == right):
-						result = False
-					left = right
-				elif self.current_token.type == NOT_EQUAL:
-					self.eat(NOT_EQUAL)
-					right = self.expr()
-					if not (left != right):
-						result = False
-					left = right
-				elif self.current_token.type == LESS_EQ:
-					self.eat(LESS_EQ)
-					right = self.expr()
-					if not (left <= right):
-						result = False
-					left = right
-				elif self.current_token.type == GREATER_EQ:
-					self.eat(GREATER_EQ)
-					right = self.expr()
-					if not (left >= right):
-						result = False
-					left = right
-
-			return result
-		else:
-			return left
-
 	def expr(self):
 		node = self.term()
 
-		if self.current_token.type in [LESS, GREATER, EQUAL, NOT_EQUAL, LESS_EQ, GREATER_EQ]:
+		if self.current_token.type in [LESS, GREATER, EQUAL, NOT_EQUAL, LESS_EQ, GREATER_EQ, AND]:
 			token = self.current_token
 			self.eat(token.type)
 			return BinOp(left=node, op=token, right=self.expr())

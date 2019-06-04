@@ -34,10 +34,10 @@ loop
               .cond(token == key)
               .then(
                 ++counter;
-              )
+              );
             token = '';
-          )
-      )
+          );
+      );
 
-    io.out(key, counter);
-  )
+    io.out.call(key, counter);
+  );

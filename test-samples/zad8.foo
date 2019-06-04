@@ -7,7 +7,7 @@ str a = 'asdsadsa';
 if
   .cond(text.len.call() % 2 == 1)
   .then(
-    int mid = text.len / 2;
+    int mid = text.len.call() / 2;
     result = result + text[mid];
     loop
       .init(
@@ -18,7 +18,7 @@ if
         ++i;
         result = text[mid - i] + result;
         result = result + text[mid + i];
-      )
+      );
   )
   .else(
     int rmid = text.len.call() / 2;
@@ -33,7 +33,7 @@ if
         ++i;
         result = text[lmid - i] + result;
         result = result + text[rmid + i];
-      )
+      );
   );
 
 io.out.call(result);

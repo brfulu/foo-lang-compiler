@@ -12,4 +12,4 @@ loop
     int x = math.random.call(1, 100);
     io.out.call(x);
     ++i;
-  )
+  );

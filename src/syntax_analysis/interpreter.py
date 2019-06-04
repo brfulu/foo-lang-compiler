@@ -39,22 +39,32 @@ class Loop(AST):
 		self.cond_node = cond_node
 		self.body_node = body_node
 
+
 class Cond(AST):
 	def __init__(self, expr):
 		self.expr = expr
+
 
 class Type(AST):
 	def __init__(self, type):
 		self.type = type
 
 
+class ListAccess(AST):
+	def __init__(self, var, index):
+		self.var = var
+		self.index = index
+
+
 class Var(AST):
 	def __init__(self, var):
 		self.var = var
 
+
 class VarInc(AST):
 	def __init__(self, var):
 		self.var = var
+
 
 class VarDecl(AST):
 	def __init__(self, type_node, var_node):

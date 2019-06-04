@@ -13,16 +13,16 @@ loop
     result += text[i];
 
     if
-      .cond(string.isalpha.call(text[i]) and string.isdigit.call(text[i+1]))
+      .cond(string.isalpha.call(text[i]) & string.isdigit.call(text[i+1]))
       .then(
         result += '#';
-      )
+      );
       
     if
-      .cond(string.isdigit.call(text[i]) and string.isalpha.call(text[i+1]))
+      .cond(string.isdigit.call(text[i]) & string.isalpha.call(text[i+1]))
       .then(
         result += '*';
-      )
+      );
 
     ++i;
   );

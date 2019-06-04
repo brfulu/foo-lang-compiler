@@ -3,7 +3,7 @@ from syntax_analysis.parser import Parser
 from compiler.ast_visualizer import ASTVisualizer
 
 if __name__ == '__main__':
-	with open('../../test-samples/zad4.foo', 'r') as file:
+	with open('../../test-samples/zad10.foo', 'r') as file:
 		text = file.read().replace('\n', ' ')
 
 		lexer = Lexer(text)

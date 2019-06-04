@@ -109,9 +109,10 @@ class ASTVisualizer(NodeVisitor):
 		s = 'node{} -> node{}\n'.format(node.num, node.then_node.num)
 		self.dot_body.append(s)
 
-		self.visit(node.else_node)
-		s = 'node{} -> node{}\n'.format(node.num, node.else_node.num)
-		self.dot_body.append(s)
+		if node.else_node:
+			self.visit(node.else_node)
+			s = 'node{} -> node{}\n'.format(node.num, node.else_node.num)
+			self.dot_body.append(s)
 
 	def visit_Args(self, node):
 		s = 'node{} [label="Args"]\n'.format(self.nodecount)
@@ -197,6 +198,20 @@ class ASTVisualizer(NodeVisitor):
 
 		self.visit(node.expr)
 		s = 'node{} -> node{}\n'.format(node.num, node.expr.num)
+		self.dot_body.append(s)
+
+	def visit_ListAccess(self, node):
+		s = 'node{} [label="ListAccess"]\n'.format(self.nodecount)
+		node.num = self.nodecount
+		self.nodecount += 1
+		self.dot_body.append(s)
+
+		self.visit(node.var)
+		s = 'node{} -> node{}\n'.format(node.num, node.var.num)
+		self.dot_body.append(s)
+
+		self.visit(node.index)
+		s = 'node{} -> node{}\n'.format(node.num, node.index.num)
 		self.dot_body.append(s)
 
 	def genDot(self):

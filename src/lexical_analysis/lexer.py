@@ -169,6 +169,10 @@ class Lexer(object):
 				self.advance()
 				return Token(RBRACKET, ']')
 
+			if self.current_char == '&':
+				self.advance()
+				return Token(AND, '&')
+
 			if self.current_char == '<':
 				self.advance()
 				if self.current_char == '=':

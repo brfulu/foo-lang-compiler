@@ -23,10 +23,10 @@ loop
           .cond(token.len.call() > n)
           .then(
             token = string.upper.call(token);
-          )
+          );
         
         result = result + token;
         token = '';
-      )
-  )
+      );
+  );
 
