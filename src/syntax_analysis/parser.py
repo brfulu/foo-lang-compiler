@@ -1,6 +1,7 @@
 from lexical_analysis.tokenType import *
 from syntax_analysis.interpreter import *
 from syntax_analysis.util import restorable
+from lexical_analysis.token import Token
 
 
 class Parser(object):
@@ -21,6 +22,7 @@ class Parser(object):
 		children = []
 
 		while self.current_token.type != EOF:
+			print(self.current_token)
 			if self.current_token.type == IMPORT:
 				children.append(self.library_import())
 			elif self.current_token.type == FUNC:
@@ -28,6 +30,7 @@ class Parser(object):
 			else:
 				children.extend(self.statement_list())
 
+		print(children)
 		return Program(children)
 
 	# @restorable
@@ -51,7 +54,7 @@ class Parser(object):
 		self.eat(NAME)
 		self.eat(LPAREN)
 		fun_name = self.current_token.value
-		self.eat(ID)
+		self.eat(STRING)
 		self.eat(RPAREN)
 
 		self.eat(DOT)
@@ -73,6 +76,7 @@ class Parser(object):
 		stmts_node = Stmts(FUNC, self.statement_list())
 		self.eat(RPAREN)
 
+		self.eat(SEMICOLON)
 		return FunDecl(type_node=type_node, fun_name=fun_name, args_node=args_node, stmts_node=stmts_node)
 
 	def argument_list(self):
@@ -113,10 +117,14 @@ class Parser(object):
 				statements.append(self.if_statement())
 			elif self.current_token.type == LOOP:
 				statements.append(self.loop())
+			elif self.current_token.type == RETURN:
+				statements.append(self.return_stmt())
 			elif self.check_assignment():
 				statements.append(self.assignment_stmt())
 			elif self.check_aug_assignment():
 				statements.append(self.aug_assignment_stmt())
+			elif self.current_token.type == FUNC:
+				break
 			else:
 				statements.append(self.expr())
 				self.eat(SEMICOLON)
@@ -129,6 +137,12 @@ class Parser(object):
 			return False
 		self.eat(ID)
 		return self.current_token.type == ASSIGN
+
+	def return_stmt(self):
+		self.eat(RETURN)
+		expr = self.expr()
+		self.eat(SEMICOLON)
+		return ReturnStmt(expr)
 
 	def assignment_stmt(self):
 		var_node = Var(self.current_token.value)
@@ -239,6 +253,11 @@ class Parser(object):
 			var = Var(self.current_token.value)
 			self.eat(ID)
 			return VarInc(var)
+		elif token.type == MINUS_MINUS:
+			self.eat(MINUS_MINUS)
+			var = Var(self.current_token.value)
+			self.eat(ID)
+			return VarDec(var)
 		elif token.type == STRING:
 			self.eat(STRING)
 			return String(token.value)
@@ -246,11 +265,11 @@ class Parser(object):
 			name = self.current_token.value
 			self.eat(ID)
 			if self.current_token.type == DOT:
-				name += self.current_token.value
 				self.eat(DOT)
-				name += self.current_token.value
-				self.eat(ID)
-				self.eat(DOT)
+				if self.current_token.type != CALL:
+					name += '.' + self.current_token.value
+					self.eat(ID)
+					self.eat(DOT)
 				self.eat(CALL)
 				self.eat(LPAREN)
 				args_node = Args(self.argument_list())
@@ -304,6 +323,9 @@ class Parser(object):
 			else:
 				self.error()
 
+			if node is None:
+				zero_token = Token(INTEGER, '0')
+				node = Num(zero_token)
 			node = BinOp(left=node, op=token, right=self.term())
 
 		return node

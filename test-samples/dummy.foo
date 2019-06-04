@@ -2,4 +2,29 @@
 import 'io';
 
 int a = 5;
-a += 3;
+list c;
+c += 2;
+c[3 * 2];
+
+func
+    .name('abs')
+    .params(int x)
+    .returns(int)
+    .body(
+        loop
+            .init(int i = 0;)
+            .cond(i < 2 * 3)
+            .body(
+                if
+                  .cond(i < 3)
+                  .then(--i;)
+                  .else(i *= 2;);
+            );
+        return -x;
+    );
+
+int c = -1 + 5;
+
+abs.call(3);
+
+

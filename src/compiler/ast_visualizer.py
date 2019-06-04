@@ -77,6 +77,16 @@ class ASTVisualizer(NodeVisitor):
 		s = 'node{} -> node{}\n'.format(node.num, node.stmts_node.num)
 		self.dot_body.append(s)
 
+	def visit_ReturnStmt(self, node):
+		s = 'node{} [label="Return"]\n'.format(self.nodecount)
+		node.num = self.nodecount
+		self.nodecount += 1
+		self.dot_body.append(s)
+
+		self.visit(node.expr)
+		s = 'node{} -> node{}\n'.format(node.num, node.expr.num)
+		self.dot_body.append(s)
+
 	def visit_Loop(self, node):
 		s = 'node{} [label="Loop"]\n'.format(self.nodecount)
 		node.num = self.nodecount
@@ -150,6 +160,12 @@ class ASTVisualizer(NodeVisitor):
 
 	def visit_VarInc(self, node):
 		s = 'node{} [label="VarInc: {}"]\n'.format(self.nodecount, node.var.var)
+		node.num = self.nodecount
+		self.nodecount += 1
+		self.dot_body.append(s)
+
+	def visit_VarDec(self, node):
+		s = 'node{} [label="VarDec: {}"]\n'.format(self.nodecount, node.var.var)
 		node.num = self.nodecount
 		self.nodecount += 1
 		self.dot_body.append(s)

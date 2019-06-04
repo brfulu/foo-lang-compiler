@@ -65,6 +65,9 @@ class VarInc(AST):
 	def __init__(self, var):
 		self.var = var
 
+class VarDec(AST):
+	def __init__(self, var):
+		self.var = var
 
 class VarDecl(AST):
 	def __init__(self, type_node, var_node):
@@ -105,6 +108,11 @@ class Num(AST):
 class String(AST):
 	def __init__(self, value):
 		self.value = value
+
+
+class ReturnStmt(AST):
+	def __init__(self, expr):
+		self.expr = expr
 
 
 class NodeVisitor(object):

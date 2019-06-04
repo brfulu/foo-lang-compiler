@@ -63,6 +63,14 @@ class Lexer(object):
 			return Token(THEN, result)
 		elif result == 'else':
 			return Token(ELSE, result)
+		elif result == 'name':
+			return Token(NAME, result)
+		elif result == 'params':
+			return Token(PARAMS, result)
+		elif result == 'returns':
+			return Token(RETURNS, result)
+		elif result == 'return':
+			return Token(RETURN, result)
 		else:
 			return Token(ID, result)
 
