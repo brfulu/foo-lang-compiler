@@ -71,6 +71,8 @@ class Lexer(object):
 			return Token(RETURNS, result)
 		elif result == 'return':
 			return Token(RETURN, result)
+		elif result == 'true' or result == 'false':
+			return Token(BOOLEAN, result)
 		else:
 			return Token(ID, result)
 

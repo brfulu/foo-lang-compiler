@@ -2,7 +2,6 @@ import 'io';
 
 str text = io.in.call();
 str result;
-str a = 'asdsadsa';
 
 if
   .cond(text.len.call() % 2 == 1)

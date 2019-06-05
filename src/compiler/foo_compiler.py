@@ -2,6 +2,7 @@ from syntax_analysis.interpreter import NodeVisitor
 from lexical_analysis.tokenType import *
 from syntax_analysis.interpreter import *
 
+
 def indent(code):
 	result = '\t'
 	i = 0
@@ -18,6 +19,7 @@ class Compiler(NodeVisitor):
 		self.parser = parser
 		self.output = ''
 		self.vars = {}
+		self.libs = []
 
 	def visit_Program(self, node):
 		code = ''
@@ -30,6 +32,7 @@ class Compiler(NodeVisitor):
 
 	def visit_Library(self, node):
 		code = 'import {}\n'.format(node.library)
+		self.libs.append(node.library)
 		return code
 
 	def visit_VarDecl(self, node):
@@ -151,9 +154,6 @@ class Compiler(NodeVisitor):
 			if type(node.right) is Var and self.vars[node.right.var]['type'] == 'flt':
 				op = '/'
 
-		print(type(node.left))
-		print(type(node.right))
-
 		left = self.visit(node.left)
 		right = self.visit(node.right)
 		code = '({} {} {})'.format(left, op, right)
@@ -167,7 +167,17 @@ class Compiler(NodeVisitor):
 		code = "'{}'".format(node.value)
 		return code
 
+	def visit_Boolean(self, node):
+		value = node.value[0].upper() + node.value[1:]
+		code = "{}".format(value)
+		return code
+
 	def visit_FunCall(self, node):
+		splitted = node.name.split('.')
+		if len(splitted) > 1:
+			lib = splitted[0]
+			if lib not in self.libs:
+				raise Exception("Library '{}' not imported".format(lib))
 		fun_name = node.name
 		if node.name == 'io.in':
 			fun_name = 'input'

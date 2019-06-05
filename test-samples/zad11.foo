@@ -1,0 +1,36 @@
+
+func
+    .name('is_sorted')
+    .params(list arr)
+    .returns(bool)
+    .body(
+        bool result = true;
+        loop
+            .init(int i = 1;)
+            .cond(i < arr.len.call())
+            .body(
+                if
+                    .cond(arr[i] < arr[i-1])
+                    .then(
+                        result = false;
+                    );
+                ++i;
+            );
+        return result;
+    );
+
+
+int n = io.in.call();
+list x;
+
+loop
+    .init(int i = 0;)
+    .cond(i < n)
+    .body(
+        int num = io.in.call();
+        x.append.call(num);
+        ++i;
+    );
+
+bool result = is_sorted.call(x);
+io.out.call(result);

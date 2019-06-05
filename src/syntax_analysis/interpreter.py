@@ -118,6 +118,14 @@ class String(AST):
 		self.value = value
 
 
+class Boolean(AST):
+	def __init__(self, value):
+		self.value = value
+
+	def __repr__(self):
+		return str(self.value)
+
+
 class ReturnStmt(AST):
 	def __init__(self, expr):
 		self.expr = expr

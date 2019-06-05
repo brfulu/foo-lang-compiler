@@ -1,6 +1,7 @@
 from syntax_analysis.interpreter import NodeVisitor
 import textwrap
 
+
 class ASTVisualizer(NodeVisitor):
 	def __init__(self, parser):
 		self.parser = parser
@@ -185,6 +186,12 @@ class ASTVisualizer(NodeVisitor):
 		self.dot_body.append(s)
 
 	def visit_Num(self, node):
+		s = 'node{} [label="{}"]\n'.format(self.nodecount, node.value)
+		node.num = self.nodecount
+		self.nodecount += 1
+		self.dot_body.append(s)
+
+	def visit_Boolean(self, node):
 		s = 'node{} [label="{}"]\n'.format(self.nodecount, node.value)
 		node.num = self.nodecount
 		self.nodecount += 1
