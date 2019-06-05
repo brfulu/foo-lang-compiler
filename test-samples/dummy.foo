@@ -1,21 +1,18 @@
-import 'op';
 
-int a;
-a = 3;
+int a = (3 + 2) * 5;
 
 func
-    .name('asd')
+    .name('abs')
     .params(int a)
     .returns(int)
     .body(
-        int c = 4;
+        if
+            .cond(a < 0)
+            .then(
+                a *= -1;
+            );
+        return a;
     );
 
-if
-    .cond(a < 3)
-    .then(
-         3 + 2;
-    )
-    .else(
-        int d = 3 * 2;
-    );
+int x = io.in.call();
+io.out.call(abs.call(x));

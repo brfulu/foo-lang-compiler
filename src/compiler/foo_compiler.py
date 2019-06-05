@@ -156,7 +156,7 @@ class Compiler(NodeVisitor):
 
 		left = self.visit(node.left)
 		right = self.visit(node.right)
-		code = '{} {} {}'.format(left, op, right)
+		code = '({} {} {})'.format(left, op, right)
 		return code
 
 	def visit_Num(self, node):
