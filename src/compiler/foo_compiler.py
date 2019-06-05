@@ -176,8 +176,9 @@ class Compiler(NodeVisitor):
 		splitted = node.name.split('.')
 		if len(splitted) > 1:
 			lib = splitted[0]
-			if lib not in self.libs:
+			if lib not in self.libs and lib in ['io', 'string', 'random']:
 				raise Exception("Library '{}' not imported".format(lib))
+
 		fun_name = node.name
 		if node.name == 'io.in':
 			fun_name = 'input'

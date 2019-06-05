@@ -1,3 +1,4 @@
+import io
 def is_sorted(arr = []):
 	result = []
 	result = True
@@ -21,3 +22,5 @@ while (i < n):
 result = []
 result = is_sorted(x)
 print(result)
+if result:
+	print('evo me')
