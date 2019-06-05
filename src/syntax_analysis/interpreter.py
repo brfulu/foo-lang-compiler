@@ -60,14 +60,19 @@ class Var(AST):
 	def __init__(self, var):
 		self.var = var
 
+	def __repr__(self):
+		return self.var
+
 
 class VarInc(AST):
 	def __init__(self, var):
 		self.var = var
 
+
 class VarDec(AST):
 	def __init__(self, var):
 		self.var = var
+
 
 class VarDecl(AST):
 	def __init__(self, type_node, var_node):
@@ -103,6 +108,9 @@ class Num(AST):
 	def __init__(self, token):
 		self.token = token
 		self.value = token.value
+
+	def __repr__(self):
+		return str(self.value)
 
 
 class String(AST):

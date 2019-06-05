@@ -2,7 +2,7 @@ import 'io';
 import 'string';
 
 str text = io.in.call();
-str result = '';
+str result;
 
 loop
   .init(

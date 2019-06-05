@@ -1,14 +1,19 @@
 from lexical_analysis.lexer import Lexer
 from syntax_analysis.parser import Parser
 from compiler.ast_visualizer import ASTVisualizer
+from compiler.foo_compiler import Compiler
 
 if __name__ == '__main__':
-	with open('../../test-samples/dummy.foo', 'r') as file:
+	with open('../../test-samples/zad10.foo', 'r') as file:
 		text = file.read().replace('\n', ' ')
 
 		lexer = Lexer(text)
 		parser = Parser(lexer)
-		viz = ASTVisualizer(parser)
-		content = viz.genDot()
 
+		# viz = ASTVisualizer(parser)
+		# content = viz.genDot()
+		# print(content)
+
+		compiler = Compiler(parser)
+		content = compiler.compile()
 		print(content)

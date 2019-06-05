@@ -12,7 +12,7 @@ loop
     if
       .cond(temp * temp == x)
       .then(
-        result += x;
+        result.append.call(x);
       );
     x = io.in.call();
   );

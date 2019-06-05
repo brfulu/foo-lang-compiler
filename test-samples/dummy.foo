@@ -1,30 +1,21 @@
+import 'op';
 
-import 'io';
-
-int a = 5;
-list c;
-c += 2;
-c[3 * 2];
+int a;
+a = 3;
 
 func
-    .name('abs')
-    .params(int x)
+    .name('asd')
+    .params(int a)
     .returns(int)
     .body(
-        loop
-            .init(int i = 0;)
-            .cond(i < 2 * 3)
-            .body(
-                if
-                  .cond(i < 3)
-                  .then(--i;)
-                  .else(i *= 2;);
-            );
-        return -x;
+        int c = 4;
     );
 
-int c = -1 + 5;
-
-abs.call(3);
-
-
+if
+    .cond(a < 3)
+    .then(
+         3 + 2;
+    )
+    .else(
+        int d = 3 * 2;
+    );

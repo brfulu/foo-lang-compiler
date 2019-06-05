@@ -22,7 +22,6 @@ class Parser(object):
 		children = []
 
 		while self.current_token.type != EOF:
-			print(self.current_token)
 			if self.current_token.type == IMPORT:
 				children.append(self.library_import())
 			elif self.current_token.type == FUNC:
@@ -30,7 +29,6 @@ class Parser(object):
 			else:
 				children.extend(self.statement_list())
 
-		print(children)
 		return Program(children)
 
 	# @restorable

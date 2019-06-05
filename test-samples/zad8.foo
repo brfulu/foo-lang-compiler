@@ -1,7 +1,7 @@
 import 'io';
 
 str text = io.in.call();
-str result = '';
+str result;
 str a = 'asdsadsa';
 
 if

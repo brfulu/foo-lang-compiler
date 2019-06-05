@@ -3,8 +3,8 @@ import 'string';
 
 int n = io.in.call();
 str text = io.in.call();
-str token = '';
-str result = '';
+str token;
+str result;
 
 loop
   .init(
