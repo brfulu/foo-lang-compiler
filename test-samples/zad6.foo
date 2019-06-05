@@ -17,6 +17,7 @@ loop
     x = io.in.call();
   );
 
+io.out.call('Perfect squares');
 loop
   .init(
     int i = 0;

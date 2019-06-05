@@ -4,8 +4,9 @@ from compiler.ast_visualizer import ASTVisualizer
 from compiler.foo_compiler import Compiler
 
 if __name__ == '__main__':
-	with open('../../test-samples/zad10.foo', 'r') as file:
-		text = file.read().replace('\n', ' ')
+	test_case = 10
+	with open('../../test-samples/zad{}.foo'.format(test_case), 'r') as inFile:
+		text = inFile.read().replace('\n', ' ')
 
 		lexer = Lexer(text)
 		parser = Parser(lexer)
@@ -17,3 +18,7 @@ if __name__ == '__main__':
 		compiler = Compiler(parser)
 		content = compiler.compile()
 		print(content)
+
+		with open('../../test-samples/zad{}.py'.format(test_case), 'w') as outFile:
+			outFile.write(content)
+

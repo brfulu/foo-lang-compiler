@@ -14,7 +14,7 @@ loop
     ++k;
 
     str key = io.in.call();
-    str token = '';
+    str token;
     int counter = 0;
 
     loop
@@ -23,7 +23,6 @@ loop
       )
       .cond(i < text.len.call())
       .body(
-        ++i;
         if
           .cond(string.isalpha.call(text[i]))
           .then(
@@ -37,6 +36,7 @@ loop
               );
             token = '';
           );
+         ++i;
       );
 
     io.out.call(key, counter);

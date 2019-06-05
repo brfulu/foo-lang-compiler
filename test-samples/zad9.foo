@@ -5,6 +5,7 @@ int n = io.in.call();
 str text = io.in.call();
 str token;
 str result;
+text += ' ';
 
 loop
   .init(
@@ -12,7 +13,6 @@ loop
   )
   .cond(i < text.len.call())
   .body(
-    ++i;
     if
       .cond(string.isalpha.call(text[i]))
       .then(
@@ -24,9 +24,11 @@ loop
           .then(
             token = string.upper.call(token);
           );
-        
-        result = result + token;
+        result += token;
+        result += text[i];
         token = '';
       );
+    ++i;
   );
 
+io.out.call(result);

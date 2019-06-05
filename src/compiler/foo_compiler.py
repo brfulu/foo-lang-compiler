@@ -1,6 +1,6 @@
 from syntax_analysis.interpreter import NodeVisitor
 from lexical_analysis.tokenType import *
-
+from syntax_analysis.interpreter import *
 
 def indent(code):
 	result = '\t'
@@ -140,6 +140,20 @@ class Compiler(NodeVisitor):
 		if node.op.value == '&':
 			op = 'and'
 
+		if node.op.value == '/':
+			op = '//'
+			if type(node.left) is Num and node.left.token.type == FLOAT:
+				op = '/'
+			if type(node.right) is Num and node.right.token.type == FLOAT:
+				op = '/'
+			if type(node.left) is Var and self.vars[node.left.var]['type'] == 'flt':
+				op = '/'
+			if type(node.right) is Var and self.vars[node.right.var]['type'] == 'flt':
+				op = '/'
+
+		print(type(node.left))
+		print(type(node.right))
+
 		left = self.visit(node.left)
 		right = self.visit(node.right)
 		code = '{} {} {}'.format(left, op, right)
@@ -159,9 +173,20 @@ class Compiler(NodeVisitor):
 			fun_name = 'input'
 		elif node.name == 'io.out':
 			fun_name = 'print'
+		elif node.name == 'io.fin':
+			args = self.visit(node.args_node)
+			code = "open({}, 'r').read()".format(args)
+			return code
 		elif node.name.endswith('len'):
 			fun_name = 'len(' + fun_name.split('.')[0] + ')'
 			return fun_name
+		elif node.name.endswith('max'):
+			fun_name = 'max'
+		elif node.name.startswith('string.'):
+			method = node.name.split('.')[1]
+			args = self.visit(node.args_node)
+			code = '{}.{}()'.format(args, method)
+			return code
 		args = self.visit(node.args_node)
 		code = '{}({})'.format(fun_name, args)
 		return code

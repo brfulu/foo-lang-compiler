@@ -1,5 +1,5 @@
 import 'io';
-import 'math';
+import 'random';
 
 int n = io.in.call();
 
@@ -9,7 +9,7 @@ loop
   )
   .cond(i < n)
   .body(
-    int x = math.random.call(1, 100);
+    int x = random.randint.call(1, 100);
     io.out.call(x);
     ++i;
   );
