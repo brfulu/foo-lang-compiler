@@ -1,4 +1,4 @@
-import io
+
 height = 0
 height = int(input())
 men_weight = 0

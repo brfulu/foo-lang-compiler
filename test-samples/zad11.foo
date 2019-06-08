@@ -35,8 +35,3 @@ loop
 
 bool result = is_sorted.call(x);
 io.out.call(result);
-if
-    .cond(result)
-    .then(
-        io.out.call('evo me');
-    );

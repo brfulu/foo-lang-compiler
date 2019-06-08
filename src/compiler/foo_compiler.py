@@ -3,6 +3,9 @@ from lexical_analysis.tokenType import *
 from syntax_analysis.interpreter import *
 
 
+def prRed(skk): print("\033[31m {}\033[00m".format(skk))
+
+
 def indent(code):
 	result = '\t'
 	i = 0
@@ -31,7 +34,15 @@ class Compiler(NodeVisitor):
 		return code
 
 	def visit_Library(self, node):
-		code = 'import {}\n'.format(node.library)
+		if node.library not in ['io', 'string', 'random', 'math']:
+			prRed('Compile error: invalid library "{}"'.format(node.library))
+			exit()
+		# raise Exception('Invalid library: {}'.format(node.library))
+
+		if node.library in ['io', 'string']:
+			code = ''
+		else:
+			code = 'import {}\n'.format(node.library)
 		self.libs.append(node.library)
 		return code
 
@@ -42,6 +53,8 @@ class Compiler(NodeVisitor):
 			default_value = '0'
 		elif node.type_node.type == 'str':
 			default_value = "''"
+		elif node.type_node.type == 'bool':
+			default_value = 'False'
 		else:
 			default_value = '[]'
 		code = '{} = {}\n'.format(var, default_value)
@@ -180,7 +193,9 @@ class Compiler(NodeVisitor):
 		if len(splitted) > 1:
 			lib = splitted[0]
 			if lib not in self.libs and lib in ['io', 'string', 'random']:
-				raise Exception("Library '{}' not imported".format(lib))
+				prRed('Compile error: missing library "{}"'.format(lib))
+				exit()
+			# raise Exception("Library '{}' not imported".format(lib))
 
 		fun_name = node.name
 		if node.name == 'io.in':

@@ -1,4 +1,4 @@
-import io
+
 text = ''
 text = input()
 result = ''

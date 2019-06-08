@@ -1,6 +1,6 @@
-import io
+
 import math
-import string
+
 result = []
 x = 0
 x = int(input())

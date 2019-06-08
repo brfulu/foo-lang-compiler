@@ -1,5 +1,5 @@
-import io
-import string
+
+
 file = ''
 file = input()
 text = ''

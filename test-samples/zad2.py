@@ -1,4 +1,4 @@
-import io
+
 num = 0
 num = int(input())
 sum = 0

@@ -1,5 +1,5 @@
-import io
-import string
+
+
 text = ''
 text = input()
 result = ''

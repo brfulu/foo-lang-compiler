@@ -4,19 +4,25 @@ from syntax_analysis.util import restorable
 from lexical_analysis.token import Token
 
 
+def prRed(skk): print("\033[31m {}\033[00m".format(skk))
+
+
 class Parser(object):
 	def __init__(self, lexer):
 		self.lexer = lexer
 		self.current_token = self.lexer.get_next_token()
+		self.line_number = 0
 
-	def error(self):
-		raise Exception('Greska u parsiranju')
+	def error(self, msg):
+		# raise Exception('Compile error: ' + msg)
+		prRed('Parsing error: ' + msg)
+		exit()
 
 	def eat(self, type):
 		if self.current_token.type == type:
 			self.current_token = self.lexer.get_next_token()
 		else:
-			self.error()
+			self.error('expected "{}" but found "{}"'.format(type, self.current_token.value))
 
 	def program(self):
 		children = []

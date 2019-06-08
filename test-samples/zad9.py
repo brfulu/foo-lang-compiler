@@ -1,5 +1,5 @@
-import io
-import string
+
+
 n = 0
 n = int(input())
 text = ''
