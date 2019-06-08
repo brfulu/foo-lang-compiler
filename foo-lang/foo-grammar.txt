@@ -1,22 +1,30 @@
+// Uvod
+-Startni simbol je <program>
+-Terminali se pisu malim slovima bez zagrada
+-Neterminali se pisu malim slovima izmedju < i >
+
+
+// Produkcije
+
 <program>               : <declarations>
 
-<declarations>          : (<library_import> | <func_declaration> | <var_declaration> | <stmt_list>)*
+<declarations>          : (<library_import> | <func_declaration> | <stmt_list>)*
 
 <library_import>        : import <apostrophe> <id> <apostrophe> <semicolon>
 
-<func_declaration>      : func <dot> <func_name> <dot> <func_params> <dot> <func_returns> <dot> <body>
+<func_declaration>      : func <dot> <func_name> <dot> <func_params> <dot> <func_returns> <dot> <body> <semicolon>
 
-<func_name>             : name <lparen> <id> <rparen>
+<func_name>             : name <lparen> <apostrophe> <id> <apostrophe> <rparen>
 
 <func_params>           : params <lparen> <parameters> <rparen>
 
 <func_returns>          : returns <lparen> <type> <rparen>
 
-<body>                  : body <lparen> (<stmt_list>)? <rparen>
+<body>                  : body <lparen> <stmt_list> <rparen>
 
 <var_declaration>       : <type> <var> <var_init> <semicolon>
 
-<var_init>              : (<assign> <expr>)?
+<var_init>              : (<assign> (<expr>)?
 
 <parameters>            : <empty>
                         | <param> (<comma> <param>)*
@@ -29,7 +37,6 @@
 <stmt>                  : <var_declaration>
                         | <assignment_stmt>
                         | <aug_assignment_stmt>
-                        | <comparison_stmt>
                         | <if_stmt>
                         | <loop>
                         | <expr_stmt>
@@ -37,13 +44,11 @@
 
 <expr_stmt>             : <expr> <semicolon>
 
-<comparison_stmt>       : <expr> (<lt> | <gt> | <lt_or_eq> | <gt_or_eq>) <expr> <semicolon>
-
 <assignment_stmt>       : <var> <assign> <expr> <semicolon>
 
 <aug_assignment_stmt>   : <var> <aug_op> <expr> <semicolon>
 
-<aug_op>                : (<plus> | <minus> | <mul> | <div> | <mod>) <assign>
+<aug_op>                : (<plus_assign> | <minus_assign> | <mul_assign> | <div_assign> | <mod_assign>)
 
 <list_access>           : <var> <l_square_bracket> <whole_number> <r_square_bracket>
 
@@ -51,7 +56,7 @@
 
 <return_stmt>           : return <expr> <semicolon>
 
-<if_stmt>               : if <dot> <condition> <dot> <then> (<dot> <else>)?
+<if_stmt>               : if <dot> <condition> <dot> <then> (<dot> <else>)? <semicolon>
 
 <condition>             : cond <lparen> <expr> ((and | or) <expr>)? <rparen>
 
@@ -59,33 +64,35 @@
 
 <else>                  : else <lparen> <stmt_list> <rparen>
 
-<expr>                  : <term> ((<plus> | <minus>) <term>)*
+<expr>                  : (<simple_expr> | <bool_expr>)
+
+<bool_expr>             : <simple_expr> (<eq> | <lt> | <gt> | <lt_or_eq> | <gt_or_eq>) <simple_expr>
+
+<simple_expr>           : <term> ((<plus> | <minus>) <term>)*
 
 <term>                  : <factor> ((<mul> | <div>) <factor>)*
 
 <factor>                : <plus> <factor>
                         | <minus> <factor>
-                        | <ampersand> <var>
-                        | <plus> <plus> <var>
-                        | <minus minus> <var>
+                        | <plus_plus> <var>
+                        | <minus_minus> <var>
                         | <int>
                         | <float>
                         | <boolean>
                         | <string>
-                        | <lparen> <expr> <rparen>
+                        | <lparen> <simple_expr> <rparen>
                         | <var>
                         | <func_call>
                         | <list_access>
 
-<func_call>             : (<variable> <dot>)? <id> <dot> call <lparen> <arguments>(<expr>)* <rparen> <semicolon>
+<func_call>             : (<variable> <dot>)? <id> <dot> call <lparen> <arguments> <rparen> <semicolon>
 
 <arguments>             : <empty>
                         | <expr> (<comma> <expr>)*
 
-<loop>                  : loop <dot> <loop_init> <dot> <condition> <dot> <body>
+<loop>                  : loop <dot> <loop_init> <dot> <condition> <dot> <body> <semicolon>
 
 <loop_init>             : init <lparen> (<var_declaration>)? <rparen>
-
 
 <id>                    : <letter> (<letter> | <digit> | <underscore>)*
 
@@ -97,7 +104,7 @@
 
 <dot>                   : .
 
-<assign>                : :=
+<assign>                : =
 
 <coma>                  : ,
 
@@ -140,6 +147,8 @@
 
 <r_square_bracket>      : ]
 
+<eq>                    : ==
+
 <gt>                    : >
 
 <lt>                    : <
@@ -147,6 +156,20 @@
 <gt_or_eq>              : >=
 
 <lt_or_eq>              : <=
+
+<plus_assign>           : +=
+
+<minus_assign>          : -=
+
+<mul_assign>            : *=
+
+<div_assign>            : /=
+
+<mod_assign>            : %=
+
+<plus_plus>             : ++
+
+<minus_minus>           : --
 
 <empty>                 :
 
