@@ -6,17 +6,17 @@ text = ''
 text = input()
 token = ''
 result = ''
-text = text + ' '
+text = (text + ' ')
 i = 0
 i = 0
-while i < len(text):
+while (i < len(text)):
 	if text[i].isalpha():
-		token = token + text[i]
+		token = (token + text[i])
 	else:
-		if len(token) > n:
+		if (len(token) > n):
 			token = token.upper()
-		result = result + token
-		result = result + text[i]
+		result = (result + token)
+		result = (result + text[i])
 		token = ''
 	i += 1
 print(result)

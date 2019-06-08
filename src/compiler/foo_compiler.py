@@ -56,6 +56,9 @@ class Compiler(NodeVisitor):
 			value = 'int(' + value + ')'
 		if value == 'input()' and self.vars[var]['type'] == 'float':
 			value = 'float(' + value + ')'
+		if value.startswith('math.') and self.vars[var]['type'] == 'int':
+			value = 'int(' + value + ')'
+
 		code = '{} = {}\n'.format(node.var_node.var, value)
 		return code
 
@@ -196,7 +199,10 @@ class Compiler(NodeVisitor):
 		elif node.name.startswith('string.'):
 			method = node.name.split('.')[1]
 			args = self.visit(node.args_node)
-			code = '{}.{}()'.format(args, method)
+			if method == 'toString':
+				code = 'str({})'.format(args)
+			else:
+				code = '{}.{}()'.format(args, method)
 			return code
 		args = self.visit(node.args_node)
 		code = '{}({})'.format(fun_name, args)

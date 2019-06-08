@@ -2,8 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="95e4c347-12ff-49e6-ab82-a3bdff9013c8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foo-lang/foo-grammar.txt" beforeDir="false" afterPath="$PROJECT_DIR$/foo-lang/foo-grammar.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/compiler/foo_compiler.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/compiler/foo_compiler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/compiler/fooc.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/compiler/fooc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-samples/dummy.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-samples/zad1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-samples/zad10.foo" beforeDir="false" afterPath="$PROJECT_DIR$/test-samples/zad10.foo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-samples/zad10.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-samples/zad11.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-samples/zad2.foo" beforeDir="false" afterPath="$PROJECT_DIR$/test-samples/zad2.foo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-samples/zad2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-samples/zad3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-samples/zad4.foo" beforeDir="false" afterPath="$PROJECT_DIR$/test-samples/zad4.foo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-samples/zad4.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-samples/zad5.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-samples/zad6.foo" beforeDir="false" afterPath="$PROJECT_DIR$/test-samples/zad6.foo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-samples/zad6.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-samples/zad7.foo" beforeDir="false" afterPath="$PROJECT_DIR$/test-samples/zad7.foo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-samples/zad7.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-samples/zad8.foo" beforeDir="false" afterPath="$PROJECT_DIR$/test-samples/zad8.foo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-samples/zad8.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-samples/zad9.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,33 +30,69 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/foo_lang_compiler$fooc.coverage" NAME="fooc Coverage Results" MODIFIED="1559730828032" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/compiler" />
+    <SUITE FILE_PATH="coverage/foo_lang_compiler$fooc.coverage" NAME="fooc Coverage Results" MODIFIED="1559985031498" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/compiler" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/compiler/fooc.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/syntax_analysis/interpreter.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="137" selection-start-line="137" selection-end-line="137" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/foo-lang/foo-grammar.txt">
+        <entry file="file://$PROJECT_DIR$/test-samples/zad10.foo">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="142" column="8" selection-start-line="142" selection-start-column="1" selection-end-line="142" selection-end-column="8" />
+            <state relative-caret-position="624">
+              <caret line="47" column="30" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test-samples/zad3.foo">
+        <entry file="file://$PROJECT_DIR$/test-samples/dummy.foo">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="9" column="11" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
+            <state relative-caret-position="220">
+              <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test-samples/zad2.foo">
+        <entry file="file://$PROJECT_DIR$/src/compiler/foo_compiler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="580">
-              <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+            <state relative-caret-position="110">
+              <caret line="182" selection-start-line="182" selection-end-line="182" />
+              <folding>
+                <element signature="e#0#51#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/syntax_analysis/parser.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="143">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -54,11 +108,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>funccal</find>
-      <find>ifstm</find>
-      <find>bino</find>
-      <find>num</find>
-      <find>func</find>
       <find>And</find>
       <find>String</find>
       <find>Num</find>
@@ -84,6 +133,11 @@
       <find>expr</find>
       <find>var_declaration</find>
       <find>boolean</find>
+      <find>ifstmt</find>
+      <find>whil</find>
+      <find>cond</find>
+      <find>int</find>
+      <find>len</find>
     </findStrings>
     <replaceStrings>
       <replace>func_decl</replace>
@@ -116,17 +170,11 @@
         <option value="$PROJECT_DIR$/foo-lang/foo-lang.xml" />
         <option value="$PROJECT_DIR$/src/lexical_analysis/token.py" />
         <option value="$PROJECT_DIR$/src/syntax_analysis/util.py" />
-        <option value="$PROJECT_DIR$/test-samples/zad2.foo" />
-        <option value="$PROJECT_DIR$/test-samples/zad4.foo" />
         <option value="$PROJECT_DIR$/src/compiler/compiler.py" />
         <option value="$PROJECT_DIR$/test-samples/zad2.py" />
-        <option value="$PROJECT_DIR$/test-samples/zad6.foo" />
         <option value="$PROJECT_DIR$/test-samples/zad7.py" />
-        <option value="$PROJECT_DIR$/test-samples/zad7.foo" />
-        <option value="$PROJECT_DIR$/test-samples/zad8.foo" />
         <option value="$PROJECT_DIR$/test-samples/zad9.foo" />
         <option value="$PROJECT_DIR$/test-samples/zad10.py" />
-        <option value="$PROJECT_DIR$/test-samples/zad10.foo" />
         <option value="$PROJECT_DIR$/test-samples/dummy.foo" />
         <option value="$PROJECT_DIR$/src/lexical_analysis/tokenType.py" />
         <option value="$PROJECT_DIR$/src/lexical_analysis/lexer.py" />
@@ -135,10 +183,17 @@
         <option value="$PROJECT_DIR$/src/syntax_analysis/interpreter.py" />
         <option value="$PROJECT_DIR$/test-samples/zad1.foo" />
         <option value="$PROJECT_DIR$/test-samples/zad5.foo" />
-        <option value="$PROJECT_DIR$/src/compiler/fooc.py" />
         <option value="$PROJECT_DIR$/test-samples/zad11.foo" />
-        <option value="$PROJECT_DIR$/src/compiler/foo_compiler.py" />
         <option value="$PROJECT_DIR$/foo-lang/foo-grammar.txt" />
+        <option value="$PROJECT_DIR$/test-samples/zad2.foo" />
+        <option value="$PROJECT_DIR$/test-samples/zad4.foo" />
+        <option value="$PROJECT_DIR$/src/compiler/foo_compiler.py" />
+        <option value="$PROJECT_DIR$/test-samples/zad6.foo" />
+        <option value="$PROJECT_DIR$/test-samples/zad7.foo" />
+        <option value="$PROJECT_DIR$/test-samples/zad8.py" />
+        <option value="$PROJECT_DIR$/test-samples/zad8.foo" />
+        <option value="$PROJECT_DIR$/src/compiler/fooc.py" />
+        <option value="$PROJECT_DIR$/test-samples/zad10.foo" />
       </list>
     </option>
   </component>
@@ -167,6 +222,23 @@
               <item name="foo-lang-compiler" type="b2602c69:ProjectViewProjectNode" />
               <item name="foo-lang-compiler" type="462c0819:PsiDirectoryNode" />
               <item name="foo-lang" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="foo-lang-compiler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="foo-lang-compiler" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="foo-lang-compiler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="foo-lang-compiler" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="compiler" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="foo-lang-compiler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="foo-lang-compiler" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="syntax_analysis" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="foo-lang-compiler" type="b2602c69:ProjectViewProjectNode" />
@@ -255,23 +327,23 @@
       <workItem from="1559580505726" duration="15777000" />
       <workItem from="1559684783720" duration="4592000" />
       <workItem from="1559715685664" duration="14480000" />
-      <workItem from="1559978029134" duration="3141000" />
+      <workItem from="1559978029134" duration="6307000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64951000" />
+    <option name="totallyTimeSpent" value="68117000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21744792" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21744792" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32921812" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3772291" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.4814815" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39917696" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -335,109 +407,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test-samples/zad1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test-samples/zad2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test-samples/zad3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test-samples/zad4.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test-samples/zad5.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test-samples/zad6.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test-samples/zad7.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test-samples/zad7.foo">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="39" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test-samples/zad8.foo">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="28" column="24" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test-samples/zad8.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-79" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test-samples/zad9.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test-samples/zad9.foo">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test-samples/zad10.foo">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="38" column="9" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test-samples/dummy.foo">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lexical_analysis/tokenType.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
@@ -472,6 +441,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test-samples/zad11.foo">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-samples/dummy.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/foo-lang/foo-grammar.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2840">
+          <caret line="142" column="8" selection-start-line="142" selection-start-column="1" selection-end-line="142" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test-samples/zad1.foo">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -479,68 +465,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test-samples/zad4.foo">
+    <entry file="file://$PROJECT_DIR$/test-samples/zad1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+        <state relative-caret-position="180">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/compiler/fooc.py">
+    <entry file="file://$PROJECT_DIR$/test-samples/zad2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="160">
+          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/syntax_analysis/interpreter.py">
+    <entry file="file://$PROJECT_DIR$/test-samples/zad2.foo">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2780">
-          <caret line="139" column="8" selection-start-line="139" selection-start-column="8" selection-end-line="139" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/syntax_analysis/parser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/compiler/foo_compiler.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3520">
-          <caret line="178" column="71" selection-start-line="178" selection-start-column="71" selection-end-line="178" selection-end-column="71" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test-samples/zad6.foo">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test-samples/zad5.foo">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="12" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test-samples/zad11.foo">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
+        <state relative-caret-position="200">
+          <caret line="10" column="17" lean-forward="true" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -551,17 +493,142 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test-samples/zad2.foo">
+    <entry file="file://$PROJECT_DIR$/test-samples/zad3.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-samples/zad4.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-samples/zad4.foo">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+        <state relative-caret-position="60">
+          <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/foo-lang/foo-grammar.txt">
+    <entry file="file://$PROJECT_DIR$/test-samples/zad5.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="142" column="8" selection-start-line="142" selection-start-column="1" selection-end-line="142" selection-end-column="8" />
+        <state>
+          <caret lean-forward="true" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-samples/zad5.foo">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-samples/zad6.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="9" column="28" lean-forward="true" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-samples/zad6.foo">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="564">
+          <caret line="31" column="29" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/syntax_analysis/parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-samples/zad7.foo">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-samples/zad7.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-samples/zad8.foo">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="29" column="41" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-samples/zad8.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-samples/zad9.foo">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-samples/zad9.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/syntax_analysis/interpreter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="137" selection-start-line="137" selection-end-line="137" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/compiler/fooc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/compiler/foo_compiler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="182" selection-start-line="182" selection-end-line="182" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-samples/dummy.foo">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-samples/zad10.foo">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="624">
+          <caret line="47" column="30" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="30" />
         </state>
       </provider>
     </entry>

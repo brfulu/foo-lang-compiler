@@ -4,7 +4,7 @@ from compiler.ast_visualizer import ASTVisualizer
 from compiler.foo_compiler import Compiler
 
 if __name__ == '__main__':
-	test_case = 11
+	test_case = 10
 	with open('../../test-samples/zad{}.foo'.format(test_case), 'r') as inFile:
 		text = inFile.read().replace('\n', ' ')
 

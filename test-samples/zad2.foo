@@ -1,7 +1,7 @@
 import 'io';
 
 int num = io.in.call();
-int sum = 0;
+int sum;
 
 loop
   .init()
@@ -12,7 +12,7 @@ loop
     num /= 10;
   );
 
-str result = '';
+str result;
 
 if
   .cond(sum < 10)

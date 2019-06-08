@@ -1,7 +1,7 @@
 import 'io';
 
 int n = io.in.call();
-flt sum = 0;
+flt sum;
 
 loop
   .init(

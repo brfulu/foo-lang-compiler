@@ -1,9 +1,11 @@
 import 'io';
+import 'string';
 
 str file = io.in.call();
 str text = io.fin.call(file);
 
 int n = io.in.call();
+int total;
 
 loop
   .init(
@@ -39,5 +41,8 @@ loop
          ++i;
       );
 
+    total += counter;
     io.out.call(key, counter);
   );
+
+io.out.call('Total: ', total);

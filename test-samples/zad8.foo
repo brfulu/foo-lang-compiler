@@ -8,7 +8,8 @@ if
   .then(
     int mid = text.len.call() / 2;
     result = result + text[mid];
-    io.out.call(result);
+    str spaces = (text.len.call() / 2) * ' ';
+    io.out.call(spaces + result);
     loop
       .init(
         int i = 0;
@@ -18,14 +19,16 @@ if
         ++i;
         result = text[mid - i] + result;
         result = result + text[mid + i];
-        io.out.call(result);
+        str spaces = (text.len.call() / 2 - i) * ' ';
+        io.out.call(spaces + result);
       );
   )
   .else(
     int rmid = text.len.call() / 2;
     int lmid = rmid - 1;
     result = text[lmid] + text[rmid];
-    io.out.call(result);
+    str spaces = (text.len.call() / 2 - 1) * ' ';
+    io.out.call(spaces + result);
     loop
       .init(
         int i = 0;
@@ -35,7 +38,8 @@ if
         ++i;
         result = text[lmid - i] + result;
         result = result + text[rmid + i];
-        io.out.call(result);
+        str spaces = (text.len.call() / 2 - i - 1) * ' ';
+        io.out.call(spaces + result);
       );
   );
 

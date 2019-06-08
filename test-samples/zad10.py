@@ -1,10 +1,12 @@
 import io
+import string
 file = ''
 file = input()
 text = ''
 text = open(file, 'r').read()
 n = 0
 n = int(input())
+total = 0
 k = 0
 k = 0
 while (k < n):
@@ -24,4 +26,6 @@ while (k < n):
 				counter += 1
 			token = ''
 		i += 1
+	total = (total + counter)
 	print(key, counter)
+print('Total: ', total)

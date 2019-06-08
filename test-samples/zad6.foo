@@ -1,5 +1,6 @@
 import 'io';
 import 'math';
+import 'string';
 
 list result;
 int x = io.in.call();
@@ -17,13 +18,15 @@ loop
     x = io.in.call();
   );
 
-io.out.call('Perfect squares');
+str output;
 loop
   .init(
     int i = 0;
   )
   .cond(i < result.len.call())
   .body(
-    io.out.call(result[i]);
+    output += string.toString.call(result[i]) + ', ';
     ++i;
   );
+
+io.out.call('Perfect squares:', output);

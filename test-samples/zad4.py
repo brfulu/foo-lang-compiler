@@ -2,7 +2,6 @@ import io
 n = 0
 n = int(input())
 sum = 0
-sum = 0
 i = 0
 i = 0
 while (i < n):
