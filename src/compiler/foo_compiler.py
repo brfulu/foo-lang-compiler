@@ -3,7 +3,7 @@ from lexical_analysis.tokenType import *
 from syntax_analysis.interpreter import *
 
 
-def prRed(skk): print("\033[31m {}\033[00m".format(skk))
+# def prRed(skk): print("\033[31m {}\033[00m".format(skk))
 
 
 def indent(code):
@@ -35,7 +35,7 @@ class Compiler(NodeVisitor):
 
 	def visit_Library(self, node):
 		if node.library not in ['io', 'string', 'random', 'math']:
-			prRed('Compile error: invalid library "{}"'.format(node.library))
+			print('Compile error: invalid library "{}"'.format(node.library))
 			exit()
 		# raise Exception('Invalid library: {}'.format(node.library))
 
@@ -193,7 +193,7 @@ class Compiler(NodeVisitor):
 		if len(splitted) > 1:
 			lib = splitted[0]
 			if lib not in self.libs and lib in ['io', 'string', 'random']:
-				prRed('Compile error: missing library "{}"'.format(lib))
+				print('Compile error: missing library "{}"'.format(lib))
 				exit()
 			# raise Exception("Library '{}' not imported".format(lib))
 

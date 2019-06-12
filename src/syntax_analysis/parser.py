@@ -4,7 +4,7 @@ from syntax_analysis.util import restorable
 from lexical_analysis.token import Token
 
 
-def prRed(skk): print("\033[31m {}\033[00m".format(skk))
+# def prRed(skk): print("\033[31m {}\033[00m".format(skk))
 
 
 class Parser(object):
@@ -15,7 +15,7 @@ class Parser(object):
 
 	def error(self, msg):
 		# raise Exception('Compile error: ' + msg)
-		prRed('Parsing error: ' + msg)
+		print('Parsing error: ' + msg)
 		exit()
 
 	def eat(self, type):
